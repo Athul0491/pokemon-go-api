@@ -15,5 +15,5 @@ api.add_resource(UltraLeague,"/api/ultra-league")
 
 
 
-if __name__ == "__main__":
-    app.run(port=5000)
+# if __name__ == "__main__":
+#     app.run(port=5000)
