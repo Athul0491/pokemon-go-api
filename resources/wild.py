@@ -1,8 +1,7 @@
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
-import re
-from flask import Flask 
-from flask_restful import Api, Resource,reqparse, abort
+
+from flask_restful import  Resource,reqparse
 from flask import jsonify
 
 
