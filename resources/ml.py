@@ -1,8 +1,8 @@
 from flask_restful import Resource,reqparse
 
 def getPokemon(pokemon):
-    p = {
-        "a": [
+    data = {
+        "ranking_list": [
             {
             "speciesId": "melmetal",
             "speciesName": "Melmetal",
@@ -42952,9 +42952,12 @@ def getPokemon(pokemon):
             }
         ]
     }
-    for dicts in p['a']:
-        val = [key for key, value in dicts.items() if value == pokemon]
+    for rank in range(len(data['ranking_list'])):
+        
+        dicts = data['ranking_list'][rank]
+        val = [key for key, value in dicts.items() if value == Pokemon]
         if(len(val)==1):
+            dicts['rank']=int(rank)+1
             return dicts
 # print(getPokemon("Dialga"))
 

@@ -1,8 +1,8 @@
 from flask_restful import  Resource,reqparse
 
 def getPokemon(Pokemon):
-    p = {
-        "a": [
+    data = {
+        "ranking_list": [
             {
             "speciesId": "registeel",
             "speciesName": "Registeel",
@@ -50163,12 +50163,15 @@ def getPokemon(Pokemon):
             }
         ]
     }            
-    for dicts in p['a']:
+    
+
+    for rank in range(len(data['ranking_list'])):
+        
+        dicts = data['ranking_list'][rank]
         val = [key for key, value in dicts.items() if value == Pokemon]
         if(len(val)==1):
+            dicts['rank']=int(rank)+1
             return dicts
-
-
 pokemon_get_args=reqparse.RequestParser()
 pokemon_get_args.add_argument("Pokemon",type=str,help="Pokemon is required",required=True)
 class UltraLeague(Resource):

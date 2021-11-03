@@ -3,8 +3,8 @@ from flask import Flask
 from flask_restful import Api, Resource,reqparse, abort
 
 def getPokemon(Pokemon):
-    p = {
-      "a": [
+    data = {
+      "ranking_list": [
         {
           "speciesId": "medicham",
           "speciesName": "Medicham",
@@ -69085,9 +69085,11 @@ def getPokemon(Pokemon):
         }
       ]
     }
-    for dicts in p['a']:
+    for rank in range(len(data['ranking_list'])):        
+        dicts = data['ranking_list'][rank]
         val = [key for key, value in dicts.items() if value == Pokemon]
         if(len(val)==1):
+            dicts['rank']=int(rank)+1
             return dicts
 
 
