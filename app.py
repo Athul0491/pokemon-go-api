@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_restful import Api
-from gl import GreatLeague
-from ml import MasterLeague
-from ul import UltraLeague
+from resources.gl import GreatLeague
+from resources.ml import MasterLeague
+from resources.ul import UltraLeague
 
 app = Flask(__name__)
 api = Api(app)
