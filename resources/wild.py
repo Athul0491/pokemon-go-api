@@ -116,7 +116,7 @@ class Wild(Resource):
         types = pType(_id)
         rate = fc(_id)
         _table = table(_id) 
-        output = {"img":img,"Types":types,"Vulnerable":vulnerable,'Resistant':resistant,"rates":rate,"table":_table}
+        output = {"img":img,"Types":types,"Vulnerable":vulnerable,"Resistant":resistant,"rates":rate,"table":_table}
         return jsonify(output)
 
 
