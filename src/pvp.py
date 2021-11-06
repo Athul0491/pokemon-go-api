@@ -1,12 +1,8 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.keys import Keys
-from flask import Flask 
 import os
-from flask_restful import Api, Resource,reqparse, abort
+from flask_restful import Resource,reqparse
 from selenium.webdriver.support.ui import Select
-app = Flask(__name__)
-api = Api(app)
+
 pokemon_get_args=reqparse.RequestParser()
 pokemon_get_args.add_argument("name",type=str,help="Name is required",required=True)
 pokemon_get_args.add_argument("attack",type=str,help="Attack is required",required=True)
