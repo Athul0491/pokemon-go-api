@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_restful import Api
-from resources.gl import GreatLeague
-from resources.ml import MasterLeague
-from resources.ul import UltraLeague
-from resources.wild import Wild
-from resources.pvp import Pvp
+from src.gl import GreatLeague
+from src.ml import MasterLeague
+from src.ul import UltraLeague
+from src.wild import Wild
+from src.pvp import Pvp
 
 app = Flask(__name__)
 api = Api(app)
