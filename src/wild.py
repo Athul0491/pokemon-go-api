@@ -72,7 +72,7 @@ def resistantData(_id):
         damage1 = src3.text.strip()
         mid1.append(damage1)
     for item in range(len(mid0)):
-        resistant.append({mid0[item]:mid1[item]})
+        resistant.append({"name":mid0[item], "multiplier":mid1[item]})
     return resistant
 
 
