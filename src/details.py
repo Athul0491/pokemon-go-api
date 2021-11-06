@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from flask_restful import Resource,reqparse
 
 pokemon_get_args=reqparse.RequestParser()
-pokemon_get_args.add_argument("Pokemon",type=str,help="Pokemon name is required",required=True)
+pokemon_get_args.add_argument("id",type=str,help="Pokemon id is required",required=True)
 def data(Pokemon):
     pika = []
     url = "https://gamepress.gg/pokemongo/pokemon-list"
@@ -115,7 +115,7 @@ def pStats(_id):
 class Details(Resource):
    def get(self):
         args = pokemon_get_args.parse_args()
-        _id = data(args.Pokemon)
+        _id = args.id
         img = image(_id)
         vulnerable = vulnerableData(_id)         
         resistant = resistantData(_id)
