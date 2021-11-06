@@ -22,7 +22,7 @@ def scraper(name,attack,defence,hp,league):
     CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")    
     # browser = webdriver.Chrome(options=chrome_options)
     chrome_options.binary_location = GOOGLE_CHROME_PATH
