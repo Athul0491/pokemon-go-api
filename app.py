@@ -7,7 +7,7 @@ from resources.wild import Wild
 from resources.pvp import Pvp
 
 app = Flask(__name__)
-# api = Api(app)
+api = Api(app)
 
 
 
