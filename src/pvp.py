@@ -18,14 +18,18 @@ pokemon_get_args.add_argument("league",type=str,help="League is required",requir
 
 # driver = webdriver.Chrome(ChromeDriverManager().install())
 def scraper(name,attack,defence,hp,league):
+    chrome_bin = os.environ.get('GOOGLE_CHROME_SHIM', None)
+
     GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
     CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
     chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = chrome_bin
+
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")    
     # browser = webdriver.Chrome(options=chrome_options)
-    chrome_options.binary_location = GOOGLE_CHROME_PATH
+    # chrome_options.binary_location = GOOGLE_CHROME_PATH
     # PATH = 'C:\Program Files (x86)\chromedriver.exe'
     url = "https://pogostat.com/"
     browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
