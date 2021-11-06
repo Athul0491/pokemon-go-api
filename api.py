@@ -19,5 +19,5 @@ api.add_resource(Pvp,"/api/pvp")
 
 
 
-# if __name__ == "__main__":
-#     app.run(port=5000)
+if __name__ == "__main__":
+    app.run()
