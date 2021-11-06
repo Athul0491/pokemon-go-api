@@ -52,7 +52,7 @@ def vulnerableData(_id):
         initial1.append(damage)
 
     for item in range(len(initial0)):
-        vulnerable.append({initial0[item]:initial1[item]})
+        vulnerable.append({"name":initial0[item], "multiplier":initial1[item]})
     return vulnerable
 
 
