@@ -9,10 +9,10 @@ app = Flask(__name__)
 api = Api(app)
 pokemon_get_args=reqparse.RequestParser()
 pokemon_get_args.add_argument("name",type=str,help="Name is required",required=True)
-pokemon_get_args.add_argument("attack",type=int,help="Attack is required",required=True)
-pokemon_get_args.add_argument("defence",type=int,help="Defence is required",required=True)
-pokemon_get_args.add_argument("hp",type=int,help="Hp is required",required=True)
-pokemon_get_args.add_argument("league",type=int,help="League is required",required=True)
+pokemon_get_args.add_argument("attack",type=str,help="Attack is required",required=True)
+pokemon_get_args.add_argument("defence",type=str,help="Defence is required",required=True)
+pokemon_get_args.add_argument("hp",type=str,help="Hp is required",required=True)
+pokemon_get_args.add_argument("league",type=str,help="League is required",required=True)
 
 #PVP IV
 
@@ -91,7 +91,7 @@ def scraper(name,attack,defence,hp,league):
 class Pvp(Resource):
     def get(self):
         args = pokemon_get_args.parse_args()
-        output = scraper(args.name,args.attack,args.defence,args.hp,args.league)
+        output = scraper(args.name,int(args.attack),int(args.defence),int(args.hp),int(args.league))
         return output
 # api.add_resource(Pokemon,"/api")
 # if __name__ == "__main__":
