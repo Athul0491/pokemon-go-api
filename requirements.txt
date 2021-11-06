@@ -26,3 +26,4 @@ selenium == 3.141.0
 
 # C:\Users\ash\Desktop\pokemate\src\pvp.py: 2
 webdriver_manager == 3.4.2
+gunicorn
