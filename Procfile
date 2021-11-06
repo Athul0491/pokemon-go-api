@@ -1,1 +1,1 @@
-web: gunicorn api:app--preload
+worker: python api.py
