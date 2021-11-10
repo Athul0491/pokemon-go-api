@@ -53,7 +53,7 @@ def vulnerableData(_id):
         initial1.append(damage)
 
     for item in range(len(initial0)):
-        vulnerable.append({initial0[item]:initial1[item]})
+        vulnerable.append({"name":initial0[item], "multiplier":initial1[item]})
     return vulnerable
 
 
@@ -73,7 +73,7 @@ def resistantData(_id):
         damage1 = src3.text.strip()
         mid1.append(damage1)
     for item in range(len(mid0)):
-        resistant.append({mid0[item]:mid1[item]})
+        resistant.append({"name":mid0[item], "multiplier":mid1[item]})
     return resistant
 
 def pokeRatings(_id):
