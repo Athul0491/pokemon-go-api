@@ -42955,7 +42955,7 @@ def getPokemon(pokemon):
     for rank in range(len(data['ranking_list'])):
         
         dicts = data['ranking_list'][rank]
-        val = [key for key, value in dicts.items() if value == Pokemon]
+        val = [key for key, value in dicts.items() if value == pokemon]
         if(len(val)==1):
             dicts['rank']=int(rank)+1
             return dicts
