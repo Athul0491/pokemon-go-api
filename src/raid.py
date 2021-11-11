@@ -24,9 +24,9 @@ def scraper():
         group['name'] = name
         if(count==0):
             group['tier'] = 'Mega'
-        elif (count>=1 & count<4):
+        elif (count>=1 and count<4):
             group['tier'] = 'Tier 5'
-        elif (count>=4 & count<8):
+        elif (count>=4 and count<8):
             group['tier'] = 'Tier 3'
         elif (count>=8):
             group['tier'] = 'Tier 1'
